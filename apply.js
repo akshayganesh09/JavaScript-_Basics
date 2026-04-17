@@ -1,6 +1,9 @@
+// calle, apply & bind - are used for Function Borrowing.
+// That is it allows an Object to use a method belonging to another object.
+
 // Apply() - Allows an object to borrow method from another object.
-// Immediatly invoked function and arguments are passed as an Array.
-// use case: when we are not certain about the arguments. We can spread the arguments.
+// Immediatly invoked function and arguments are passed as an Array of values.
+// use case: when we are not certain about the arguments.
 
 const series3 = {
   make: "BMW",
@@ -31,20 +34,15 @@ inWareHouse.apply(series5, [2018, "Pune"]);
 lineUpCost.cop.apply(series3, ["$400"]); // Here an Object (series3) is passed to a method of another Object (lineUpCost).
 lineUpCost.cop.apply(series5, ["$700"]);
 
-// Arguments can be spreaded...
+//Practical use case.
 
-let data = ["7 series", 2021, "petrol"];
+Math.max(2, 4, 1, 7);
 
-function premiumSegments(data) {
-  console.log(`Our premium segment vehicle: ${data}`);
-}
+// Suppose we have an Array of data 
+let arr = [2, 4, 1, 7]
+// with out doing...  
+// Math.max(arr[0], arr[1], arr[2], arr[3], arr[4])
 
-premiumSegments.call(null, data);
+// we can do...
 
-// Real world use case.
-let values = [1, 7, 2, 3];
-// let x = Math.max(values); This fails because max() expects comma seperated values
-let x = Math.max.apply(null, values);
-console.log(x);
-
-
+Math.max.apply(null, arr)
