@@ -43,7 +43,7 @@ p1.__proto__ //  will be { welcome: f }.
 // What is happening here...?
 
 // When you create an Object using new keyword from a Constructor function or a Class. The object will be attached with a "prototype".
-// If the class or generator function had any methods that will be attached to the prototype.
+// If the class or constructor function had any methods that will be attached to the prototype.
 
 // i.e. Newly created Objects internal prototype (__proto__) is set to Person.prototype
 
@@ -55,3 +55,23 @@ Person.prototype  //  will be { welcome: f } itself.
 // 2) Sets the objects prototype (__proto__) to Person.prototype.
 // 3) Calls the constructor function of (Person) with `this` bound to new Object { }.
 // 4) Returns the Object. (unless constructor explicitly has any return statement). 
+
+
+
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    greet() {
+        console.log("Hello");
+    }
+}
+
+const person1 = new Person("Xavi");
+
+
+// Here new 1st creates a new empty object { }.
+// person1, is now an empty object, then it sets the Person.prototype to person1.__proto__
+// that is  person1.__proto__ = Person.prototype (now person1 will be having a greet method in its proto)
+// then it calls the constructor function and sets the value of this. And returns the object.
