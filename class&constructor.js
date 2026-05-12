@@ -14,6 +14,19 @@ class Person {
 // Constructor: Is a function inside class that executes immediatly and only once when a class is invoked. It is used to initialise
 // the new Objects properties.
 
+// Constructor
+// -------------
+
+let p1 = new Person("xavi", 28);
+
+// what happens inside a constructor?
+// 1. new keyword creates a new empty object { }.
+// 2. Links { }.__proto__ = Person.prototype.
+// 3. Binds that { } with this, now this = { }.
+// 4. Runs the constructor code, i.e. { }.username = name & { }.userAge = age.That is it will be now { username: xavi, userAge: 28 }.
+// 5. Retuns this Object, i.e p1 = { username: xavi, userAge: 28 }
+
+
 // greet(): Is a method inside the class, if an object is created using new Person(). Only the greet() method reference will be passed to the new Object.
 
 // e.g if 10,000 instance is create using new Person class. There would be still only 1 greet method. All the 10,000 instance will have only the

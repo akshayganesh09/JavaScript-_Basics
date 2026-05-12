@@ -18,3 +18,10 @@ personA.display(); // Implicit binding.
 
 showName.call(personB); // Explicit binding.
 // In Explicit binding - The value of this refers to the value inside the parenthesis.
+
+
+// Point to note: 
+// personA.name --> It's is just a Property Accessor (here 'this' has nothing to do with).
+
+//"this" only matters when it is inside a function.
+// personA.display() --> Here value of this refers to whatever is to the left of the (.), so here [this = personA]
