@@ -28,7 +28,7 @@ function inWareHouse(year, warehouse) {
   console.log(`Model ${this.model} - ${this.units} units available. year of manufacture: ${year}, ${warehouse} warehouse. `);
 }
 
-inWareHouse.call(series3, 2015, "Chennai"); // Here an Object (series3) is passed to a function. Making the function reusable.
+ // Here an Object (series3) is passed to a function. Making the function reusable.
 inWareHouse.call(series5, 2018, "Pune");
 
 lineUpCost.cop.call(series3, "$400"); // Here an Object (series3) is passed to a method of another Object (lineUpCost).
