@@ -53,7 +53,7 @@ Person.prototype  //  will be { welcome: f } itself.
 // **** what `new` does internaly  ****.
 // 1) Creates a new empty Object { }.
 // 2) Sets the objects prototype (__proto__) to Person.prototype.
-// 3) Calls the constructor function of (Person) with `this` bound to new Object { }.
+// 3) Calls the constructor function of (Person) with `this` bound to new Object { }. basically ---> Person.call(obj, "Villa", 34)
 // 4) Returns the Object. (unless constructor explicitly has any return statement). 
 
 
