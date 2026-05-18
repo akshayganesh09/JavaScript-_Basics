@@ -35,14 +35,16 @@ lineUpCost.cop.apply(series3, ["$400"]); // Here an Object (series3) is passed t
 lineUpCost.cop.apply(series5, ["$700"]);
 
 //Practical use case.
+// --------------------
 
-Math.max(2, 4, 1, 7);
+function sum(a, b, c) {
+  console.log(a+b+c);
+}
 
 // Suppose we have an Array of data 
-let arr = [2, 4, 1, 7]
+let arr = [2, 4, 1]
 // with out doing...  
-// Math.max(arr[0], arr[1], arr[2], arr[3], arr[4])
+// Math.max(arr[0], arr[1], arr[2]);
 
 // we can do...
-
-Math.max.apply(null, arr)
+sum.apply(null, arr);
