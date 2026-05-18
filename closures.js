@@ -1,6 +1,22 @@
 // Closure: The inner function retains the access of a variable that was declared in outer function, 
 // even after the outer function has finished execution.
 
+function outer() {
+  let count = 1;
+
+  function inner() {
+    count++;
+    console.log(count);
+  }
+  console.log(count);
+  return inner;
+}
+
+let x = outer();
+x();
+x();
+
+// Practical example.
 
 function createBankAccount (initialDeposite) {
     let balance = initialDeposite;
@@ -26,7 +42,8 @@ console.log(userA);
 userA.deposite(10); // But still it remembers the value "balance" which was declared inside "createBankAccount" 
 // This is due to closure.
 
-// ** The "Execution Context" of createBankAccount is popped off the Call Stack, but the Lexical Environment (the "backpack") stays in the Heap because userA is still holding onto it.
+// ** The "Execution Context" of createBankAccount is popped off the Call Stack, but the Lexical Environment (the "backpack") 
+// stays in the Heap because userA is still holding onto it.
 
 
 // Memory Implecation

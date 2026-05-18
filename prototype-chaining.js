@@ -70,3 +70,26 @@ let result = arr.map(x => x * 2);
 // 3. If still not found it checks in arr.__proto__.__proto__ which is (Object.prototype).
 // 4. If still not found it returns undefined. 
 
+// Prototype Inheritance related to Object
+// ---------------------------------------
+
+let obj = {
+    roles: ["developer"]
+}
+
+let obj1 = Object.create(obj);
+
+// Here we get an empty object created i.e. obj1 = { }
+// But obj1.__proto__ is set to obj.prototype. That means now obj1 has all the properties and methods of obj (the parent object).
+
+// Important this to remeber --- since property roles is a reference type (its reference is stored) when the instance
+// i.e. obj1 mutates it then it will effect the parent object as well
+
+obj1.roles.push("tester"); // By doing this will mutate the parent prototype which is obj.prototype.
+
+// But on the other hand.. if we do ..
+
+obj1.roles = ["tester", "debveloper"] // This wont bring any changes to the obj.prototype, this will only create a new property on obj1
+
+// Mutation only happens to Arrays, Objects and other Reference types. Only when we do .push(), .pop(), .map() etc..
+
