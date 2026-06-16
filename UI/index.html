@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+</head>
+
+<body>
+    <div id="grand-parent" class="grand-parent-component">
+        <div id="parent" class="parent-component">
+            <div id="child" class="child-component">
+                <button id="button-click">Click</button>
+            </div>
+        </div>
+        <div class="event-delegation">
+            <ul id="user-id-click" class="list">
+                <li class="list-1" data-id="1"><button id="button">User 1</button></li>
+                <li class="list-2" data-id="2"><button id="button">User 2</button></li>
+                <li class="list-3" data-id="3"><button id="button">User 3</button></li>
+            </ul>
+        </div>
+    </div>
+    <script src="../event-delegation.js"></script>
+    <script src="../this-binding.js"></script>
+</body>
+
+</html>
